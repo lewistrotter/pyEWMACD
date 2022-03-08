@@ -27,7 +27,7 @@ out = EWMACD(ds=ds,
 ```
 
 ```python
-# a variable called change exists in the output, which you can plot on a per-pixel basis like so
+# plot the output variable called 'change' (on a per-pixel basis)
 import matplotlib.pyplot as plt
 out['change'].isel(x=0, y=0).plot()
 plt.show()
