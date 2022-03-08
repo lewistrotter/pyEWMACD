@@ -12,8 +12,9 @@ The result is a time series of signals which convey not only the presence of a d
 This script offers two of Brooks' EWMACD impmentation; 'static' and 'dynamic' (i.e., EDYN). The former continously uses the same training period set by the user to derive residuals, whereas the latter will automatically reset the training period to a new 'regime' once a significant break has occurred. See Brooks et al., (2017) for more information.
 
 ## Example run
-<code># get an xarray dataset with x, y, time coordinates and a variable of vegetation values</code>
-<code>ds = xr.Dataset(...)</code>
+```# get an xarray dataset with x, y, time coordinates and a variable of vegetation values
+ds = xr.Dataset(...)
+```
 
 <code># feed the dataset into the EWMACD function</code>
 <code>
