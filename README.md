@@ -1,6 +1,6 @@
 # pyEWMACD
 ## Summary
-This is an early (but working) python implementation of Brooks et al., (2014) EWMACD (including EDYN). It is a almost 1:1 conversion of Brooks' R code (version 1.9.6) located here: https://vtechworks.lib.vt.edu/handle/10919/50543.5. We have added support for Xarray Datasets (thus NetCDF) as input into the EWMACD function to simplify Brooks' implemntation. All you need is an xarray time series dataset with x, y, time (numpy datetime64) coordinates and a variable of vegetation values and you are good to go. See the example below.
+This is an early (but working) python implementation of Brooks et al., (2017) EWMACD (including EDYN). It is a almost 1:1 conversion of Brooks' R code (version 1.9.6) located here: https://vtechworks.lib.vt.edu/handle/10919/50543.5. We have added support for Xarray Datasets (thus NetCDF) as input into the EWMACD function to simplify Brooks' implemntation. All you need is an xarray time series dataset with x, y, time (numpy datetime64) coordinates and a variable of vegetation values and you are good to go. See the example below.
 
 This script is still very rough (had to get it done quick for a project), but I will clena up and improve in the future. We'd like to thank Brooks et al. for their great work on EWMACD. If you use this script, please cite the reference at the bottom of this page if you publish your research.
 
