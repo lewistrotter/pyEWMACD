@@ -11,7 +11,17 @@ Based on Brooks et al. (2017), Exponentially Weighted Moving Average Change Dete
 The result is a time series of signals which convey not only the presence of a disturbance but also the magnitude and timing, up to the temporal resolution of the input data. Part of the class of memory control charts, EWMA charts are specifically designed to detect subtle shifts from the in-control state, the state in which a process (in this case, forest status) continues to behave according to its historically observed or intended characteristics (e.g., stable forest). This makes them ideally suited to detect not only acute changes, such as harvests and fires, but also longer, slower periods of gradual forest decline.
 This script offers two of Brooks' EWMACD impmentation; 'static' and 'dynamic' (i.e., EDYN). The former continously uses the same training period set by the user to derive residuals, whereas the latter will automatically reset the training period to a new 'regime' once a significant break has occurred. See Brooks et al., (2017) for more information.
 
-## Example run
+## Demonstration
+```python
+# pyEWMACD only requires a few common libraries
+import os
+import sys
+import time
+import numpy as np
+import xarray as xr
+import scipy.stats
+```
+
 ```python
 # take xarray dataset with x, y, time coordinates a variable called veg_idx containing raw ndvi values
 ds = xr.Dataset(...)
