@@ -12,18 +12,26 @@ The result is a time series of signals which convey not only the presence of a d
 This script offers two of Brooks' EWMACD impmentation; 'static' and 'dynamic' (i.e., EDYN). The former continously uses the same training period set by the user to derive residuals, whereas the latter will automatically reset the training period to a new 'regime' once a significant break has occurred. See Brooks et al., (2017) for more information.
 
 ## Example run
-```# get an xarray dataset with x, y, time coordinates and a variable of vegetation values
+```python
+# take xarray dataset with x, y, time coordinates a variable called veg_idx containing raw ndvi values
 ds = xr.Dataset(...)
 ```
 
-<code># feed the dataset into the EWMACD function</code>
-<code>
+```python
+# feed the dataset into the EWMACD function
 out = EWMACD(ds=ds, 
              trainingPeriod='static',
              trainingStart=2000,
              trainingEnd=2005,
              persistence_per_year=1)
-</code>
+```
+
+```python
+# a variable called change exists in the output, which you can plot on a per-pixel basis like so
+import matplotlib.pyplot as plt
+out['change'].isel(x=0, y=0).plot()
+plt.show()
+```
 
 # References
 Brooks, E.B., Yang, Z., Thomas, V.A. and Wynne, R.H., 2017. Edyn: Dynamic signaling of changes to forests using exponentially weighted moving average charts. Forests, 8(9), p.304.
